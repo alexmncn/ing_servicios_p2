@@ -17,10 +17,14 @@ public class ParkingRegister {
     private LocalDateTime timestamp;
 
 
+    public ParkingRegister(){};
+
     public ParkingRegister(boolean entry, String license_plate) {
         this.entry = entry;
         this.license_plate = license_plate;
     }
+
+    public Long getId() { return id; }
 
     public boolean isEntry() {
         return entry;
@@ -37,4 +41,6 @@ public class ParkingRegister {
     public void setLicense_plate(String license_plate) {
         this.license_plate = license_plate;
     }
+
+    public LocalDateTime getTimestamp() { return timestamp; }
 }
