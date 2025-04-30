@@ -17,6 +17,11 @@ public class ParkingRegister {
     private LocalDateTime timestamp;
 
 
+    public ParkingRegister(boolean entry, String license_plate) {
+        this.entry = entry;
+        this.license_plate = license_plate;
+    }
+
     public boolean isEntry() {
         return entry;
     }
