@@ -64,6 +64,7 @@ public class ParkingRegisterController {
         ParkingRegister secondLastRegister = lastRegisters.get(1);
 
         if (!lastRegister.isEntry() && secondLastRegister.isEntry()) {
+            double base = 1.0;
             double rate = 0.035; // Cost per minute (euros)
 
             LocalDateTime entryDate = secondLastRegister.getTimestamp();
@@ -74,6 +75,7 @@ public class ParkingRegisterController {
 
             BigDecimal bd = new BigDecimal(cost);
             cost = bd.setScale(2, RoundingMode.HALF_UP).doubleValue();
+            cost = cost + base;
 
             response.put("coste", cost);
             return new ResponseEntity<>(response, code);
